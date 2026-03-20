@@ -1,13 +1,12 @@
 # Filter
 
-## GitHub configuration
+ブルバキ数学原論の位相空間論 I に出てくるフィルターの議論を、Lean で追いながら学ぶためのリポジトリです。
 
-To set up your new GitHub repository, follow these steps:
+研究用・本格運用用の形式化ではなく、あくまで学習用です。
 
-* Under your repository name, click **Settings**.
-* In the **Actions** section of the sidebar, click "General".
-* Check the box **Allow GitHub Actions to create and approve pull requests**.
-* Click the **Pages** section of the settings sidebar.
-* In the **Source** dropdown menu, select "GitHub Actions".
+## 背景
 
-After following the steps above, you can remove this section from the README file.
+以前は [Bourbaki](https://github.com/gaxiiiiiiiiiiii/Bourbaki) で数学原論寄りの独自実装を目指していましたが、重くなりすぎたため、今回は Mathlib の実装を自分でも再現しながら学ぶ方針で作り直しています。
+
+
+
