@@ -127,15 +127,6 @@ local instance (X : Type u) :
 where
   sInf S :=  Filter.generate (⋃ f ∈ S, f.sets)
 
-local instance (X : Type u) :
-  PartialOrder (Filter X)
-where
-  le F G := ∀ s, s ∈ G → s ∈ F
-  le_refl := by simp
-  le_trans := by grind
-  le_antisymm := by
-    intro F G Hl Hr; ext s; grind
-
 
 local instance (X : Type u) :
   BoundedOrder (Filter X)
@@ -209,20 +200,6 @@ where
       apply F.mem_of_superset IH st
     | @inter s t Hs Ht IHs IHt =>
       apply F.inter_sets IHs IHt
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 end Bourbaki
