@@ -66,7 +66,7 @@ example {X : Type u} {S : Set (Set X)} {U : Set X} :
 
 
 
--- ss7-2 命題2
+-- ss6-2 命題2
 -- ブルバキとMathlibでフィルターの定義が違うから主張も若干違うけど、ほぼ同じ内容
 #check Filter.generate_neBot_iff
 example {X : Type u} {S : Set (Set X)} :
