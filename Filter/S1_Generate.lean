@@ -25,6 +25,8 @@ where
 -/
 
 
+
+
 #check Filter.mem_generate_iff
 example {X : Type u} {S : Set (Set X)} {U : Set X} :
   U ∈ Filter.generate S ↔ ∃ t, t ⊆ S ∧ t.Finite ∧ (⋂₀ t) ⊆ U
@@ -63,7 +65,26 @@ example {X : Type u} {S : Set (Set X)} {U : Set X} :
       use ?_, Hs
       apply  Filter.GenerateSets.basic (St Hx)
 
-
+--TODO
+#check Filter.le_generate_iff
+example {X : Type u} {S : Set (Set X)} {F : Filter X} :
+  F ≤ Filter.generate S ↔ S ⊆ F.sets
+:= by
+  constructor<;> intro H x Hx
+  · apply H; rw [Filter.mem_generate_iff]
+    use {x}
+    simp only [Set.singleton_subset_iff, Set.finite_singleton, Set.sInter_singleton, subset_refl,
+    and_self, and_true]
+    exact Hx
+  · induction Hx with
+    | @basic s Hs =>
+      exact H Hs
+    | univ =>
+      exact F.univ_sets
+    | @inter s t Hs Ht IHs IHt =>
+      exact F.inter_sets IHs IHt
+    | @superset s t Hs st IH =>
+      exact F.mem_of_superset IH st
 
 
 -- ss6-2 命題1
