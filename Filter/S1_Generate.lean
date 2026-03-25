@@ -112,3 +112,5 @@ example {X : Type u} {S : Set (Set X)} :
     simp only [Set.subset_empty_iff] at H0
     specialize H t tS Ht; rw [H0] at H
     rcases H; contradiction
+
+end Bourbaki
