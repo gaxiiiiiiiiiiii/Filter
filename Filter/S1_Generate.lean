@@ -8,10 +8,14 @@ namespace Bourbaki
 /-
 フィルターの生成
 inductive Filter.GenerateSets{α : Type u} (g : Set (Set α)) : Set α → Prop
-  | basic {α : Type u} {g : Set (Set α)} {s : Set α} : s ∈ g → GenerateSets g s
-  | univ {α : Type u} {g : Set (Set α)} : GenerateSets g Set.univ
-  | superset {α : Type u} {g : Set (Set α)} {s t : Set α} : GenerateSets g s → s ⊆ t → GenerateSets g t
-  | inter {α : Type u} {g : Set (Set α)} {s t : Set α} : GenerateSets g s → GenerateSets g t → GenerateSets g (s ∩ t)
+  | basic {α : Type u} {g : Set (Set α)} {s : Set α} :
+    s ∈ g → GenerateSets g s
+  | univ {α : Type u} {g : Set (Set α)} :
+    GenerateSets g Set.univ
+  | superset {α : Type u} {g : Set (Set α)} {s t : Set α} :
+    GenerateSets g s → s ⊆ t → GenerateSets g t
+  | inter {α : Type u} {g : Set (Set α)} {s t : Set α} :
+    GenerateSets g s → GenerateSets g t → GenerateSets g (s ∩ t)
 
 def Filter.generate {X : Type u} (S : Set (Set X)) : Filter X
 where
