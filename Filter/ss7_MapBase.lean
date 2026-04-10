@@ -103,7 +103,7 @@ example {X : Type u} {Y : Type v}
 
 
 
-example {X : Type u} {X' : Type v} (f : X → X') (B' : FilterBasis X') : --(H : ∀ M ∈ B', f ⁻¹' M ≠ ∅) :
+example {X : Type u} {X' : Type v} (f : X → X') (B' : FilterBasis X') :
   (B'.filter.comap f).isBasis ((fun b => f ⁻¹' b) '' B'.sets)
 := by
   rw [Filter.isBasis_iff]
